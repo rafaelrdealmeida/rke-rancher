@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/name: cltrke
+    app.kubernetes.io/part-of: cltrke
+  name: cltrke
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app.kubernetes.io/name: cltrke
+  sessionAffinity: None
+  type: ClusterIP
